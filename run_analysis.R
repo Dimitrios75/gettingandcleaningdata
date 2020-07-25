@@ -34,23 +34,5 @@ allDataSet <- rbind(trainSet, testSet)
 # Selecting mean and std variables.
 myVars=c(1, 2, grep("mean", names(allDataSet)), grep("std", names(allDataSet)))
 resultDataSet <- allDataSet[,myVars]
-print(names(resultDataSet))
 
-# Computing variable means.
-meansDataSet <- NULL
-for(iSubject in 1:30){
-    for(iActivity in activities$V2){
-        subset<-filter(resultDataSet, Subject==iSubject & Activity==iActivity)
-        if((dim(subset)[1])!=0){
-            results <- apply(subset[,-(1:2)], 2, mean, na.rm=TRUE)
-            meansDataSet<-rbind(meansDataSet, c(iActivity, iSubject, results))
-        }
-    }
-}
-
-# Creating the final data frame
-meansDataSet <-as.data.frame(meansDataSet)
-names(meansDataSet)<- names(resultDataSet)
-
-# Storing the dataset
-write.table(meansDataSet, "finalDataSet.txt", row.name=FALSE)
+View(resultDataSet)
