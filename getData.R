@@ -1,3 +1,6 @@
+# Libraries
+require(dplyr)
+
 # Path to the dataset directories.
 generalPath <- file.path("UCI HAR Dataset")
 trainPath <- file.path("UCI HAR Dataset","train")
@@ -31,7 +34,7 @@ allDataSet <- rbind(trainSet, testSet)
 # Selecting mean and std variables.
 myVars=c(1, 2, grep("mean", names(allDataSet)), grep("std", names(allDataSet)))
 resultDataSet <- allDataSet[,myVars]
-
+print(names(resultDataSet))
 # Computing variable means.
 meansDataSet <- NULL
 for(iSubject in 1:30){
