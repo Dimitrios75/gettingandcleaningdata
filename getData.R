@@ -32,3 +32,15 @@ allDataSet <- rbind(trainSet, testSet)
 myVars=c(1, 2, grep("mean", names(allDataSet)), grep("std", names(allDataSet)))
 resultDataSet <- allDataSet[,myVars]
 
+# Computing variable means.
+meansDataSet <- NULL
+for(iSubject in 1:30){
+    for(iActivity in activities$V2){
+        subset<-filter(resultDataSet, Subject==iSubject & Activity==iActivity)
+        if((dim(subset)[1])!=0){
+            results <- apply(subset[,-(1:2)], 2, mean, na.rm=TRUE)
+            meansDataSet<-rbind(meansDataSet, c(iActivity, iSubject, results))
+        }
+    }
+}
+names(meansDataSet)<- names(resultDataSet)
