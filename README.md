@@ -4,7 +4,9 @@
 
 The purpose of this project is to prepare tidy data that can be used for later analysis. 
 
-The original working data set represents data collected from the accelerometers from the Samsung Galaxy S smartphone, as a preliminary stage within a research project on wearable computing. 
+The original working data set represents data collected from the accelerometers from the Samsung Galaxy S smartphone, as a preliminary stage within a research project on wearable computing:
+
+>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 A full description is available at the site where the data was obtained:
 
